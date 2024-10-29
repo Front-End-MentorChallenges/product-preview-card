@@ -1,0 +1,199 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: 'Fraunces';
+    src: url(/);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+}
+
+:root{
+
+    /* Color Variables */
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+    --deep-aquamarine: hsl(134.12, 50%, 15.64%);
+
+    /* Font Weight Styles */
+    --font-size-small: 16px;
+    --fw-bold-500: 500;
+    --fw-bold-700: 700;
+
+    /* Font Family Styles */
+    --font-family-fraunces: 'Fraunces', serif;
+    --font-family-montserrat: 'Montserrat', sans-serif;
+
+    /* Transition Styles */
+    --transition-speed: 0.3s;
+}
+
+/* Body styles */
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cream);
+}
+
+/* Card Container */
+.card-container{
+    display: grid;
+    grid-auto-flow: row;
+    max-width: 45em;
+    height: 90em;
+    gap: 1em;
+    border-radius: 20px;
+    background: var(--white);
+    overflow: hidden;
+}
+
+/* Card Image */
+.card-container > .image-content{
+    gap: 0;
+    height: auto;
+    min-width: 10em;
+
+}
+
+.card-container > .image-content > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Card Image End */
+
+.card-container > .product-content{
+    position: relative;
+    padding: 1em;
+    justify-content: space-between;
+    margin: 0 auto;
+    top: 12px;
+    align-items: center;
+    width: 20em;
+}
+
+.card-container .product-content .info-title{
+  padding-bottom: 20px;
+  
+}
+
+.card-container .product-content .info-title > p{
+    color: var(--dark-grayish-blue);
+    font-weight: thin;
+    font-family: var(--font-family-montserrat);
+    letter-spacing: 4px;
+    font-size: 12px;
+}
+
+.card-container .product-content h1{
+    font-family: var(--font-family-fraunces);
+    padding-bottom: 4px;
+    font-size: 34px;
+    width: 7em;
+}
+
+.card-container .product-content > p{
+    color: var(--dark-grayish-blue);
+    font-weight: thin;
+    font-family: var(--font-family-montserrat);
+    letter-spacing: 1px;
+    font-size: 14px;
+    line-height: 30px;
+    padding-bottom: 8px;
+    margin: 20px 0px 0px 0px;
+}
+
+.card-container .product-content h2{
+    padding-bottom: 40px;
+    font-family: var(--font-family-fraunces);
+    font-weight: bold;
+    color: var(--dark-cyan);
+    font-size: 40px;
+}
+
+.card-container > .product-content > .pricing{
+    display: flex;
+    margin: 10px 0px 5px 0px;
+}
+
+.card-container > .product-content > .pricing > span{
+    text-decoration: line-through;
+    color: var(--dark-grayish-blue);
+    position: relative;
+    top: 14px;
+    left: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.card-container button{
+    padding: 18px 20px;
+    width: 100%;
+    background-color: var(--dark-cyan);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    cursor: default;
+    transition: var(--transition-speed);
+    font-weight: var(--fw-bold-700);
+    font-size: 15px;
+}
+
+.card-container button:hover{
+    background-color: var(--deep-aquamarine);
+    transition: var(--transition-speed);
+}
+
+.button[data-icon="shopping-cart"]::before{
+    content: " ";
+    background-image: url(images/icon-cart.svg);
+    width: 15px;
+    height: 16px;
+}
+
+
+/* Media Queries */
+@media screen and (min-width: 45em){
+    .card-container{
+        grid-auto-flow: column;
+        height: auto;
+    }
+  
+}
+
+/* @media screen and (max-width: 600px){  
+    .card-container > .product-content{
+        width: 80%;
+    }
+
+
+} */
+
+@media screen and (max-width:748px){
+    .card-container > .product-content{
+        width: 80%;
+    }
+    .card-container {
+        width: 40em;
+        height: 50em;
+        overflow: hidden;
+        border-radius: 30px;
+    }
+    .card-container > .image-content > img{
+        height: 300px;
+    }
+
+    .card-container > button{
+        margin-bottom: 40px;
+    }
+}
